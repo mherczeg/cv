@@ -1,4 +1,9 @@
+const path = require('path');
 const puppeteer = require('puppeteer');
+
+const publicDir = "public";
+const source = "index.html";
+const destination = "mherczeg-cv.pdf";
 
 async function init() {
 
@@ -18,7 +23,7 @@ async function init() {
         height: 1080
     })
 
-    await page.goto(`file://${process.cwd()}/index.html`, {
+    await page.goto(`file://${path.join(process.cwd(), publicDir, source)}`, {
         waitUntil: 'networkidle0'
     });
 
@@ -26,7 +31,7 @@ async function init() {
     const width = await page.evaluate(() => document.documentElement.offsetWidth);
 
     await page.pdf({
-        path: "mherczeg-cv.pdf",
+        path: path.join(publicDir, destination),
         height: `${height+1}px`,
         width: `${width}px`,
         printBackground: true,
