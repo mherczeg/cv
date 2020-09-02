@@ -13,3 +13,9 @@
 .download-pdf:hover {
     color: rgba(255, 255, 255, 0.6);
 }
+
+.resume-header .picture {
+    height: 220px;
+    object-fit: cover;
+    object-position: center;
+}
