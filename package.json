@@ -4,7 +4,7 @@
   "description": "Mate Herczeg CV",
   "main": "index.html",
   "dependencies": {
-    "puppeteer": "^5.0.0"
+    "puppeteer": "5.0.0"
   },
   "scripts": {
     "generate-pdf": "node generate-pdf.js"
