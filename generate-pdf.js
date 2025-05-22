@@ -7,7 +7,8 @@ const destination = "mherczeg-cv.pdf";
 
 async function init() {
 
-    const browser = await puppeteer.launch({ 
+    const browser = await puppeteer.launch({  
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
         browser: "chrome",
         headless: true,
     });
