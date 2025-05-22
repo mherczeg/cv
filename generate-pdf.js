@@ -7,8 +7,8 @@ const destination = "mherczeg-cv.pdf";
 
 async function init() {
 
-    const browser = await puppeteer.launch({
-        product: "chrome",
+    const browser = await puppeteer.launch({ 
+        browser: "chrome",
         headless: true,
     });
 
@@ -24,7 +24,7 @@ async function init() {
     })
 
     await page.goto(`file://${path.join(process.cwd(), publicDir, source)}`, {
-        waitUntil: 'networkidle0'
+        waitUntil: 'networkidle2'
     });
 
     const height = await page.evaluate(() => document.documentElement.offsetHeight);
